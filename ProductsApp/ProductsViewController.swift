@@ -55,8 +55,17 @@ class ProductsViewController: UIViewController {
     }
 
     private func setupUI() {
-        
+
         title = "Products"
+
+        let addBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(addTapped)
+        )
+        
+        navigationItem.rightBarButtonItems = [addBarButtonItem]
 
         productCardView.configure(with: selectedProduct)
         addSubviews()
@@ -68,9 +77,13 @@ class ProductsViewController: UIViewController {
             for: .valueChanged
         )
     }
-    
-    @objc private func categoryChanged () {
+
+    @objc private func categoryChanged() {
         productCardView.configure(with: selectedProduct)
+    }
+    
+    @objc private func addTapped () {
+        print("Tapped")
     }
 
     private func addSubviews() {
