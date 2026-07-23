@@ -14,14 +14,17 @@ class MainTabbarController: UITabBarController {
 
         let productsViewController = ProductsViewController()
         let profileViewController = ProfileViewController()
+        
+        let productsNavigationVC = UINavigationController(rootViewController: productsViewController)
+        let profileNavigationVC = UINavigationController(rootViewController: profileViewController)
 
-        productsViewController.tabBarItem = UITabBarItem(
+        productsNavigationVC.tabBarItem = UITabBarItem(
             title: "Products",
             image: UIImage(systemName: "bag"),
             selectedImage: UIImage(systemName: "bag.fill")
         )
         
-        profileViewController.tabBarItem = UITabBarItem(
+        profileNavigationVC.tabBarItem = UITabBarItem(
             title: "Profile",
             image: UIImage(systemName: "person"),
             selectedImage: UIImage(systemName: "person.fill")
@@ -30,7 +33,7 @@ class MainTabbarController: UITabBarController {
      
 
 
-        viewControllers = [productsViewController, profileViewController]
+        viewControllers = [productsNavigationVC, profileViewController]
 
     }
 
