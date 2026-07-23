@@ -55,6 +55,8 @@ class ProductsViewController: UIViewController {
     }
 
     private func setupUI() {
+        
+        title = "Products"
 
         productCardView.configure(with: selectedProduct)
         addSubviews()
